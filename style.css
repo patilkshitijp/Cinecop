@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/background.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 0 5%; /* Adjust padding for responsiveness */
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 150px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 60px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap on smaller screens */
+    height: 88%;
+    align-items: center;
+}
+
+.col {
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+h1 {
+    color: white;
+    font-size: 100px;
+}
+
+p {
+    color: white;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+button {
+    width: 180px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: white;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+}
+
+.card {
+    width: 100%;
+    max-width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.card1 {
+    background-image: url(images/superman.jpg);
+}
+
+.card2 {
+    background-image: url(images/avatar.jpg);
+}
+
+.card3 {
+    background-image: url(images/Captain_America.jpg);
+}
+
+.card4 {
+    background-image: url(images/Mission_Impossibe.jpg);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+h5 {
+    color: #fff;
+    text-shadow: 0 0 5px #999;
+}
+
+.card p {
+    text-shadow: 0 0 15px #999;
+    font-size: 8px;
+}
+
+/* Styles for Login Section */
+.login-section {
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-section h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.login-section p {
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+}
+
+.login-section p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-section p a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 40px; 
+    }
+
+    .card {
+        max-width: 90%;
+        margin: 10px 0;
+    }
+
+    button {
+        width: 100%; 
+    }
+}
+.movie-container {
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 450px;
+    cursor: pointer;
+}
+
+.movie-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-image:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+.movie-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .movie-details {
+    visibility: visible;
+    opacity: 1;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+strong {
+    color: #f1c40f;
+}
